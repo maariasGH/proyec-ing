@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, ScrollView, Text, TextInput } from "react-native";
 import { editarProducto, obtenerProducto, Producto } from "../api/productos";
 import { colores } from "../temas";
+import MensajeConfirmacion from "../components/MensajeConfirmacion";
 
 export default function EditarProducto() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -15,6 +16,7 @@ export default function EditarProducto() {
     id: 0,
   });
   const router = useRouter();
+  const [mensaje, setMensaje] = useState<string | null>(null);
 
   useEffect(() => {
     if (id) obtenerProducto(id).then((res) => setProducto(res.data));
@@ -23,11 +25,15 @@ export default function EditarProducto() {
   const handleGuardar = async () => {
     if (!id) return;
     await editarProducto(id, producto);
-    router.push("/");
+    router.push({
+      pathname: "/",
+      params: { mensaje: "✅ Producto editado correctamente" },
+    });
   };
 
   return (
     <ScrollView style={{ padding: 16, backgroundColor: colores.fondo}}>
+      {mensaje && <MensajeConfirmacion texto={mensaje} />}
       <Text style={{ fontSize: 24, fontWeight: "bold" }}>Editar producto</Text>
       <TextInput
         value={producto.title}

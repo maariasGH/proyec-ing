@@ -19,23 +19,13 @@ export default function DetalleProducto() {
 
   return (
     <ScrollView style={{ padding: 20, backgroundColor: "#f9f9f9" }}>
-      <View style={{
-        backgroundColor: "#fff",
-        borderRadius: 12,
-        padding: 16,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 3,
-      }}>
         <Image
           source={{ uri: producto.image }}
           style={{ width: "100%", height: 280, borderRadius: 10 }}
           resizeMode="center"
         />
         <Text style={{
-          fontSize: 26,
+          fontSize: 22,
           fontWeight: "bold",
           marginTop: 16,
           color: "#1C1C1E"
@@ -46,7 +36,7 @@ export default function DetalleProducto() {
           fontSize: 16,
           color: "#666",
           marginVertical: 10,
-          lineHeight: 22
+          lineHeight: 16
         }}>
           {producto.description}
         </Text>
@@ -58,7 +48,6 @@ export default function DetalleProducto() {
         }}>
           💲 {producto.price}
         </Text>
-      </View>
     </ScrollView>
   );
 }

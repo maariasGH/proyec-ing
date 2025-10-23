@@ -3,12 +3,14 @@ import { useState } from "react";
 import { Button, ScrollView, Text, TextInput } from "react-native";
 import { crearProducto } from "./api/productos";
 import { colores } from "./temas";
+import MensajeConfirmacion from "./components/MensajeConfirmacion";
 
 export default function CrearProducto() {
   const [titulo, setTitulo] = useState("");
   const [precio, setPrecio] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const router = useRouter();
+  const [mensaje, setMensaje] = useState<string | null>(null);
 
   const handleCrear = async () => {
     if (!titulo || !precio || !descripcion) return alert("Completa todos los campos");
@@ -20,13 +22,17 @@ export default function CrearProducto() {
       category: "electronics",
       id: 0
     });
-    router.push("/");
+    router.push({
+      pathname: "/",
+      params: { mensaje: "✅ Producto creado correctamente" },
+    });
   };
 
   
 
   return (
     <ScrollView style={{ padding: 16, backgroundColor: colores.fondo }}>
+        {mensaje && <MensajeConfirmacion texto={mensaje} />}
         <TextInput
           placeholder="Título"
           value={titulo}

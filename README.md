@@ -48,8 +48,8 @@ La navegación se organiza automáticamente según los archivos dentro de la car
    ├── _layout.tsx            → Configuración de navegación
    ├── api/productos.ts       → Consumo de Api FakeStore
    ├── temas.ts               → Temas Generales para la aplicación
-
    ```
+   
 🔌 API simulada
 
 -Este proyecto utiliza FakeStoreAPI para simular operaciones CRUD. ⚠️ Importante: los cambios realizados (crear, editar, eliminar) no se guardan de forma permanente, ya que la API es solo de prueba.

@@ -13,7 +13,7 @@ export default function ProductoCard({ producto }: Props) {
       backgroundColor: colores.blanco,
       marginVertical: 10,
       padding: 15,
-      borderRadius: 12,
+      borderRadius: 20,
       ...sombras.sombra,
     }}>
       <Image
@@ -25,9 +25,9 @@ export default function ProductoCard({ producto }: Props) {
         {producto.title}
       </Text>
       <Text style={{ fontSize: 16, color: colores.gris }}>${producto.price}</Text>
-      <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 12 }}>
+      <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 12}}>
         <Link href={`/producto/${producto.id}`} asChild>
-          <Button title="Ver" color={colores.primario} />
+          <Button title="Ver"  color={colores.primario}  />
         </Link>
         <Link href={`/editar/${producto.id}`} asChild>
           <Button title="Editar" color={colores.secundario} />

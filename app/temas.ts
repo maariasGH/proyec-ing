@@ -1,4 +1,4 @@
-// themas.ts
+// temas.ts
 export const colores = {
   fondo: "#f9f9f9",
   primario: "#007AFF",
@@ -18,3 +18,4 @@ export const sombras = {
     elevation: 3,
   },
 };
+
