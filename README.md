@@ -18,11 +18,13 @@ Este proyecto fue creado con [`create-expo-app`](https://www.npmjs.com/package/c
 
    ```bash
    npm install
+   ```
 
 2. Iniciar la aplicación:
 
    ```bash
    npx expo start
+   ```
 
 Desde la terminal podrás elegir cómo abrir la app:
 
@@ -51,7 +53,7 @@ La navegación se organiza automáticamente según los archivos dentro de la car
 ##🔌 API simulada
 Este proyecto utiliza FakeStoreAPI para simular operaciones CRUD. ⚠️ Importante: los cambios realizados (crear, editar, eliminar) no se guardan de forma permanente, ya que la API es solo de prueba.
 
-##📚 Recursos útiles
+📚 Recursos útiles
 Documentación de Expo
 
 Guía de Expo Router
