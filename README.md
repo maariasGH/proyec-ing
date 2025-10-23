@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
+# 🛒 Aplicación de Gestión de Productos – Expo + TypeScript
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bienvenido a tu aplicación desarrollada con [Expo](https://expo.dev) y [Expo Router](https://docs.expo.dev/router/introduction/).  
+Este proyecto fue creado con [`create-expo-app`](https://www.npmjs.com/package/create-expo-app) y utiliza navegación basada en archivos para una estructura más intuitiva.
 
-## Get started
+## 🚀 Características
 
-1. Install dependencies
+- Listado de productos con diseño moderno y responsivo
+- Vista detallada de cada producto con imagen, descripción y precio
+- Funcionalidades completas de **crear**, **editar** y **eliminar** productos
+- Navegación dinámica con rutas como `/producto/[id]`
+- Estilos consistentes y adaptables
+- Conexión a [FakeStoreAPI](https://fakestoreapi.com) para simular datos reales
+
+## 🧑‍💻 Cómo comenzar
+
+1. Instalar las dependencias:
 
    ```bash
    npm install
-   ```
 
-2. Start the app
+2. Iniciar la aplicación:
 
    ```bash
    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+Desde la terminal podrás elegir cómo abrir la app:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Expo Go
+Emulador de Android
+Simulador de iOS
+Development build
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+📁 Estructura del proyecto
+La navegación se organiza automáticamente según los archivos dentro de la carpeta app/:
 
-## Get a fresh project
+   ```bash
+   app/
+   ├── index.tsx              → Lista de productos
+   ├── producto/[id].tsx      → Detalle del producto
+   ├── components/ProductoCard.tsx  → Card individual de cada producto
+   ├── crear.tsx              → Crear nuevo producto
+   ├── editar/[id].tsx        → Editar producto existente
+   ├── eliminar/[id].tsx      → Confirmar y eliminar producto
+   ├── _layout.tsx            → Configuración de navegación
+   ├── api/productos.ts       → Consumo de Api FakeStore
+   ├── temas.ts               → Temas Generales para la aplicación
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+🔌 API simulada
+Este proyecto utiliza FakeStoreAPI para simular operaciones CRUD. ⚠️ Importante: los cambios realizados (crear, editar, eliminar) no se guardan de forma permanente, ya que la API es solo de prueba.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+📚 Recursos útiles
+Documentación de Expo
 
-## Learn more
+Guía de Expo Router
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Tutorial paso a paso de Expo
