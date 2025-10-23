@@ -28,12 +28,13 @@ Este proyecto fue creado con [`create-expo-app`](https://www.npmjs.com/package/c
 
 Desde la terminal podrás elegir cómo abrir la app:
 
-Expo Go
-Emulador de Android
-Simulador de iOS
-Development build
+-Expo Go
+-Emulador de Android
+-Simulador de iOS
+-Development build
 
 📁 Estructura del proyecto
+
 La navegación se organiza automáticamente según los archivos dentro de la carpeta app/:
 
    ```bash
@@ -49,13 +50,14 @@ La navegación se organiza automáticamente según los archivos dentro de la car
    ├── temas.ts               → Temas Generales para la aplicación
 
    ```
+🔌 API simulada
 
-##🔌 API simulada
-Este proyecto utiliza FakeStoreAPI para simular operaciones CRUD. ⚠️ Importante: los cambios realizados (crear, editar, eliminar) no se guardan de forma permanente, ya que la API es solo de prueba.
+-Este proyecto utiliza FakeStoreAPI para simular operaciones CRUD. ⚠️ Importante: los cambios realizados (crear, editar, eliminar) no se guardan de forma permanente, ya que la API es solo de prueba.
 
 📚 Recursos útiles
-Documentación de Expo
 
-Guía de Expo Router
+-Documentación de Expo
 
-Tutorial paso a paso de Expo
+-Guía de Expo Router
+
+-Tutorial paso a paso de Expo
