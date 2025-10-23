@@ -1,7 +1,8 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Button, ScrollView, Text, TextInput } from "react-native";
-import { editarProducto, obtenerProducto, Producto } from "..//api/productos";
+import { editarProducto, obtenerProducto, Producto } from "../api/productos";
+import { colores } from "../temas";
 
 export default function EditarProducto() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -11,6 +12,7 @@ export default function EditarProducto() {
     description: "",
     image: "",
     category: "",
+    id: 0,
   });
   const router = useRouter();
 
@@ -25,12 +27,19 @@ export default function EditarProducto() {
   };
 
   return (
-    <ScrollView style={{ padding: 16 }}>
+    <ScrollView style={{ padding: 16, backgroundColor: colores.fondo}}>
       <Text style={{ fontSize: 24, fontWeight: "bold" }}>Editar producto</Text>
       <TextInput
         value={producto.title}
         onChangeText={(t) => setProducto({ ...producto, title: t })}
-        style={{ borderWidth: 1, marginVertical: 8, padding: 8 }}
+        style={{
+            borderWidth: 1,
+            borderColor: colores.gris,
+            borderRadius: 8,
+            padding: 10,
+            marginVertical: 8,
+            backgroundColor: colores.blanco,
+          }}
       />
       <TextInput
         value={producto.price.toString()}
@@ -38,14 +47,28 @@ export default function EditarProducto() {
           setProducto({ ...producto, price: parseFloat(t) || 0 })
         }
         keyboardType="numeric"
-        style={{ borderWidth: 1, marginVertical: 8, padding: 8 }}
+        style={{
+            borderWidth: 1,
+            borderColor: colores.gris,
+            borderRadius: 8,
+            padding: 10,
+            marginVertical: 8,
+            backgroundColor: colores.blanco,
+          }}
       />
       <TextInput
         value={producto.description}
         onChangeText={(t) => setProducto({ ...producto, description: t })}
-        style={{ borderWidth: 1, marginVertical: 8, padding: 8 }}
+        style={{
+            borderWidth: 1,
+            borderColor: colores.gris,
+            borderRadius: 8,
+            padding: 10,
+            marginVertical: 8,
+            backgroundColor: colores.blanco,
+          }}
       />
-      <Button title="Guardar cambios" onPress={handleGuardar} />
+      <Button title="Guardar cambios" color={colores.primario} onPress={handleGuardar} />
     </ScrollView>
   );
 }
